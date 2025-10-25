@@ -1,5 +1,6 @@
 package racingcar.domain.car;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Cars {
@@ -65,5 +66,14 @@ public class Cars {
                 .filter(car -> car.getPosition() == targetPosition)
                 .map(Car::getName)
                 .toList();
+    }
+
+    /**
+     * 모든 자동차의 불변 리스트 반환
+     *
+     * @return 자동차 목록
+     */
+    public List<Car> getCars() {
+        return Collections.unmodifiableList(cars);
     }
 }
