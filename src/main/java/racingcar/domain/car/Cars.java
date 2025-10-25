@@ -15,4 +15,10 @@ public class Cars {
                 .toList();
         return new Cars(cars);
     }
+
+    public void moveAll() {
+        for (Car car : cars) {
+            car.move();
+        }
+    }
 }
