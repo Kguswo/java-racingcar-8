@@ -61,7 +61,7 @@ public class Car {
     private int generateRandomNumber() {
         return Randoms.pickNumberInRange(RANDOM_MIN, RANDOM_MAX);
     }
-    
+
     public String getName() {
         return name;
     }

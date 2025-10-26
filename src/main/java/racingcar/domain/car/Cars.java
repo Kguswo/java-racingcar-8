@@ -19,8 +19,8 @@ public class Cars {
      */
     public static Cars from(List<String> names) {
         List<Car> cars = names.stream()
-                .map(Car::createCar)
-                .toList();
+                              .map(Car::createCar)
+                              .toList();
         return new Cars(cars);
     }
 
@@ -50,9 +50,9 @@ public class Cars {
      */
     private int findMaxPosition() {
         return cars.stream()
-                .mapToInt(Car::getPosition)
-                .max()
-                .orElse(0);
+                   .mapToInt(Car::getPosition)
+                   .max()
+                   .orElse(0);
     }
 
     /**
@@ -63,9 +63,9 @@ public class Cars {
      */
     private List<String> findCarsByPosition(int targetPosition) {
         return cars.stream()
-                .filter(car -> car.getPosition() == targetPosition)
-                .map(Car::getName)
-                .toList();
+                   .filter(car -> car.getPosition() == targetPosition)
+                   .map(Car::getName)
+                   .toList();
     }
 
     /**

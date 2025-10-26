@@ -36,7 +36,7 @@ public class InputHandler {
      */
     private List<String> parseCarNames(String input) {
         return Arrays.stream(input.split(SEPARATOR))
-                .toList();
+                     .toList();
     }
 
     /**
