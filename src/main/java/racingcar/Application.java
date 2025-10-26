@@ -3,22 +3,22 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Console;
 import racingcar.domain.car.Cars;
 import racingcar.domain.game.RacingGame;
-import racingcar.view.input.InputView;
-import racingcar.view.output.OutputView;
+import racingcar.ui.input.InputHandler;
+import racingcar.ui.output.GameResultDisplay;
 
 import java.util.List;
 
 public class Application {
     public static void main(String[] args) {
         try {
-            InputView inputView = new InputView();
-            OutputView outputView = new OutputView();
+            InputHandler inputHandler = new InputHandler();
+            GameResultDisplay gameResultDisplay = new GameResultDisplay();
 
-            List<String> carNames = inputView.readCarNames();
-            int roundCount = inputView.readRoundCount();
+            List<String> carNames = inputHandler.readCarNames();
+            int roundCount = inputHandler.readRoundCount();
 
             Cars cars = Cars.from(carNames);
-            RacingGame racingGame = new RacingGame(cars, outputView);
+            RacingGame racingGame = new RacingGame(cars, gameResultDisplay);
 
             racingGame.playGame(roundCount);
         } finally {

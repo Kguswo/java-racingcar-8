@@ -1,10 +1,10 @@
-package racingcar.view.output;
+package racingcar.ui.output;
 
 import racingcar.domain.car.Car;
 
 import java.util.List;
 
-public class OutputView {
+public class GameResultDisplay {
     private static final String RESULT_HEADER = "\n실행 결과";
     private static final String POSITION_MARKER = "-";
     private static final String NAME_POSITION_SEPARATOR = " : ";

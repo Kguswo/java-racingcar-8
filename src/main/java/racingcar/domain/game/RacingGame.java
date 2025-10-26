@@ -1,7 +1,7 @@
 package racingcar.domain.game;
 
 import racingcar.domain.car.Cars;
-import racingcar.view.output.OutputView;
+import racingcar.ui.output.GameResultDisplay;
 
 import java.util.List;
 
@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class RacingGame {
     private final Cars cars;
-    private final OutputView outputView;
+    private final GameResultDisplay gameResultDisplay;
 
-    public RacingGame(Cars cars, OutputView outputView) {
+    public RacingGame(Cars cars, GameResultDisplay gameResultDisplay) {
         this.cars = cars;
-        this.outputView = outputView;
+        this.gameResultDisplay = gameResultDisplay;
     }
 
     /**
@@ -23,7 +23,7 @@ public class RacingGame {
      * @param roundCount 시도 횟수
      */
     public void playGame(int roundCount) {
-        outputView.printResultHeader();
+        gameResultDisplay.printResultHeader();
 
         for (int i = 0; i < roundCount; i++) {
             playRound();
@@ -37,7 +37,7 @@ public class RacingGame {
      */
     private void playRound() {
         cars.moveAll();
-        outputView.printRoundResult(cars.getCars());
+        gameResultDisplay.printRoundResult(cars.getCars());
     }
 
     /**
@@ -45,6 +45,6 @@ public class RacingGame {
      */
     private void printWinners() {
         List<String> winners = cars.findWinners();
-        outputView.printWinnerResult(winners);
+        gameResultDisplay.printWinnerResult(winners);
     }
 }
